@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autonomous Network Healing Platform</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand-mark">NH</div>
+  <div><h1>Autonomous Network Healing</h1><p>Network Operations Center</p></div>
+  <div class="mode"><span class="pulse"></span> SIMULATION MODE</div>
+</header>
+<main>
+  <section class="welcome">
+    <div><p class="eyebrow">NETWORK HEALTH OVERVIEW</p><h2>Detect. Diagnose. Recover.</h2>
+    <button class="secondary" id="soundBtn" onclick="toggleSound()">🔔 Sound: On</button>
+  </section>
+  <section class="stats" id="stats">
+    <article class="stat"><span>Total devices</span><strong id="totalDevices">—</strong><small>Monitored endpoints</small></article>
+    <article class="stat"><span>Healthy devices</span><strong id="healthyDevices">—</strong><small>Operating normally</small></article>
+    <article class="stat warn"><span>Active alarms</span><strong id="activeAlarms">—</strong><small>Require attention</small></article>
+    <article class="stat"><span>Recovered alarms</span><strong id="healedAlarms">—</strong><small>Healing actions complete</small></article>
+  </section>
+  <section class="panel">
+    <div class="section-head"><div><h3>Network devices</h3><p class="muted">Use the fault simulator to demonstrate detection.</p></div>
+      <button class="primary" onclick="healAll()">⚡ Heal all active alarms</button></div>
+    <div class="table-wrap"><table><thead><tr><th>Device</th><th>Type</th><th>Status</th><th>Latency</th><th>Packet loss</th><th>CPU</th><th>Inject demo fault</th></tr></thead>
+    <tbody id="deviceRows"><tr><td colspan="7">Loading devices…</td></tr></tbody></table></div>
+  </section>
+  <section class="panel">
+    <div class="section-head"><div><h3>Active alarms & root cause analysis</h3><p class="muted">Each alarm includes a likely cause and a recommended recovery.</p></div><span class="count" id="alarmCount">0 active</span></div>
+    <div id="alarms" class="alarm-list"><div class="empty">No alarms. Your simulated network is healthy.</div></div>
+  </section>
+  <section class="two-col">
+    <section class="panel"><div class="section-head"><div><h3>Healing history</h3><p class="muted">Recent automated recovery attempts</p></div></div><div id="history" class="feed"></div></section>
+    <section class="panel"><div class="section-head"><div><h3>System event log</h3><p class="muted">Detection and recovery events</p></div></div><div id="events" class="feed"></div></section>
+  </section>
+  <footer>Autonomous Network Healing Platform · Educational prototype · No real devices are modified.</footer>
+</main>
+<div id="toast" class="toast" role="status"></div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

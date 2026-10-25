@@ -1,6 +1,2 @@
-__pycache__/
-.venv/
-venv/
-.env
-*.py[cod]
-.pytest_cache/
+# Created by venv; see https://docs.python.org/3/library/venv.html
+*
