@@ -34,13 +34,11 @@ A full-stack Python educational project inspired by the supplied requirements:
 4. Create a virtual environment:
 
    ```powershell
-   py -m venv .venv
-   .venv\Scripts\Activate.ps1
+
    ```
 
    If PowerShell blocks activation, use Command Prompt and run:
-   ```bat
-   .venv\Scripts\activate.bat
+   ```
    ```
 
 5. Install dependencies:
